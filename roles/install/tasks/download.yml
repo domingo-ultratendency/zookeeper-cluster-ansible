@@ -4,6 +4,14 @@
 #       to reduce multiple downloads on all nodes.
 #       Not Required: if downloading from local company mirror.
 
+- name: Copy zookeeper tar to remote
+  ansible.builtin.copy:
+    src: "/var/jenkins_home/workspace/zookeeper-setup-pipeline/apache-zookeeper-{{ zookeeperVersion }}-bin.tar.gz"
+    dest: "{{ zookeeperTarLocation }}"
+    owner: "{{ zookeeperUser }}"
+    group: "{{ zookeeperGroup }}"
+    mode: '0644'
+
 - name: Copying and Unarchive zookeeper tar | {{ zookeeperVersion }}
   ansible.builtin.unarchive:
     src: "{{ zookeeperTarLocation }}"
