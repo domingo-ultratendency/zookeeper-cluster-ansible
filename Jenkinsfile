@@ -16,13 +16,12 @@ pipeline {
         }
         stage('Download Zookeeper source code') {
             steps {
-                sh "wget https://www.apache.org/dyn/closer.lua/zookeeper/zookeeper-3.7.0/apache-zookeeper-3.7.0-bin.tar.gz"
-
+                sh "wget https://dlcdn.apache.org/zookeeper/zookeeper-3.7.0/apache-zookeeper-3.7.0-bin.tar.gz"
             }
         }
-        stage('Deploy') {
+        stage('Cluster Setup') {
             steps {
-                echo 'Deploying....'
+                sh "ansible-playbook -i inventory/development/cluster.ini clusterSetup.yml"
             }
         }
     }
