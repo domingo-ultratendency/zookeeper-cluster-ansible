@@ -5,7 +5,8 @@
 #       Not Required: if downloading from local company mirror.
 
 - name: Copy zookeeper tar to remote
-  ansible.builtin.copy:
+  become: true 
+  copy:
     src: "/var/jenkins_home/workspace/zookeeper-setup-pipeline/apache-zookeeper-{{ zookeeperVersion }}-bin.tar.gz"
     dest: "{{ zookeeperTarLocation }}"
     owner: "{{ zookeeperUser }}"
