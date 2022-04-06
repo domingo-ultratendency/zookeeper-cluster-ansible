@@ -29,7 +29,7 @@ zookeeperVersion: 3.7.0
 zookeeperOldVersion: 3.6.3 # only used in removing old versions
 
 # use local tar only
-zookeeperTarLocation: "/zookeeper/apache-zookeeper-3.7.0-bin.tar.gz"
+zookeeperTarLocation: "/zookeeper/apache-zookeeper-{{ zookeeperVersion }}-bin.tar.gz"
 
 # splunk/Cloudwatch monitoring
 zookeeperEnvironment: "development"
