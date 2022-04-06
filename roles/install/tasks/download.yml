@@ -15,7 +15,7 @@
 
 - name: Copying and Unarchive zookeeper tar | {{ zookeeperVersion }}
   ansible.builtin.unarchive:
-    src: "{{ zookeeperTarLocation }}"
+    remote_src: "{{ zookeeperTarLocation }}"
     dest: "{{ zookeeperInstallDir }}/zookeeper-{{ zookeeperVersion }}"
     owner: "{{ zookeeperUser }}"
     group: "{{ zookeeperGroup }}"
