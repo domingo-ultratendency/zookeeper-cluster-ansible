@@ -10,7 +10,7 @@
     dest: "{{ zookeeperTarLocation }}"
     owner: "{{ zookeeperUser }}"
     group: "{{ zookeeperGroup }}"
-    mode: '0644'
+    mode: 0775
 
 - name: Copying and Unarchive zookeeper tar | {{ zookeeperVersion }}
   ansible.builtin.unarchive:
