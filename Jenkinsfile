@@ -14,8 +14,10 @@ pipeline {
                 ])
             }
         }
-        stage('Test') {
+        stage('Download Zookeeper source code') {
             steps {
+                sh "wget https://www.apache.org/dyn/closer.lua/zookeeper/zookeeper-3.7.0/apache-zookeeper-3.7.0-bin.tar.gz"
+
             }
         }
         stage('Deploy') {
