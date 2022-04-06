@@ -4,7 +4,7 @@ instances:
   - name: {{ ansible_fqdn }}
     command: metrics
     arguments:
-      host: localhost
+      host: zookeeper-node
       port: 2181
       cmd: nc
     labels:

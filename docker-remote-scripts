@@ -1,0 +1,3 @@
+docker run -it -d --network dockernet --expose 22 --expose 2182 --name zookeeper-node debian:stable-slim
+docker run -it -d --network dockernet --expose 22 --name kafka-node1 debian:stable-slim
+docker run -it -d --network dockernet --expose 22 --name kafka-node2 debian:stable-slim
