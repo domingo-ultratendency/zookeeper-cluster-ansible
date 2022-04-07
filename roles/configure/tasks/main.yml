@@ -1,7 +1,6 @@
 ---
 
 - name: Adding Zookeeper ID File | {{ zookeeperDataDir }}/myid
-- setup: {}
   ansible.builtin.template:
     dest: "{{ zookeeperDataDir }}/myid"
     src: myid
