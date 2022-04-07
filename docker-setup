@@ -1,4 +1,4 @@
-apt update && apt install -y openssh-server python3
+apt update && apt install -y openssh-server python3 apache2
 mkdir /var/run/sshd
 echo 'root:Passw0rd' | chpasswd
 sed -i 's/#PermitRootLogin prohibit-password/#PermitRootLogin yes/' /etc/ssh/sshd_config

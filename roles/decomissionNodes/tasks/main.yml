@@ -53,7 +53,7 @@
 
 - name: remove zookeeper systemd file
   ansible.builtin.file:
-    path: "/usr/lib/systemd/system/zookeeper.service"
+    path: "/etc/systemd/system/zookeeper.service"
     state: "absent"
 
 - name: unmount zookeeper ebs volume | {{ aws_zookeeper_ebs_device }}

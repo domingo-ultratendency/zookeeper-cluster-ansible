@@ -3,4 +3,4 @@
 - name: Creating Service File | zookeeper
   ansible.builtin.template:
     src: service.j2
-    dest: /usr/lib/systemd/system/zookeeper.service
+    dest: /etc/systemd/system/zookeeper.service
