@@ -1,3 +1,8 @@
 docker run -it -d --network dockernet --expose 22 --expose 2182 --name zookeeper-node debian:stable-slim
 docker run -it -d --network dockernet --expose 22 --name kafka-node1 debian:stable-slim
 docker run -it -d --network dockernet --expose 22 --name kafka-node2 debian:stable-slim
+
+#docker run -it -d --network dockernet --expose 22 --expose 2182 --name zookeeper-node --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:rw jrei/systemd-debian
+#docker run -ti -d --network dockernet --expose 22 --expose 2182 --name zookeeper-node  --privileged --cgroupns=host --cap-add=SYS_ADMIN -e "container=docker" -v /sys/fs/cgroup:/sys/fs/cgroup debian:jessie /sbin/init
+#docker run -ti -d --privileged --cap-add="SYS_ADMIN" --security-opt="seccomp=unconfined" --tmpfs="/run" --tmpfs="/run/lock" -v /sys/fs/cgroup:/sys/fs/cgroup:rw --network dockernet --expose 22 --expose 2182 --name zookeeper-node ubutu:18.04
+#docker run -ti -d --privileged --cap-add="SYS_ADMIN" --security-opt="seccomp=unconfined" --tmpfs="/run" --tmpfs="/run/lock" -v /sys/fs/cgroup:/sys/fs/cgroup:rw --network dockernet --expose 22 --expose 2182 --name zookeeper-node local/debian /sbin/init
